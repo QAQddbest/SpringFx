@@ -1,0 +1,40 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.1.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+}
+
+group = 'com.pdai.javafx'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    maven {
+        url 'https://maven.aliyun.com/repository/public'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+//    compileOnly 'org.projectlombok:lombok'
+//    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+//    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'io.github.typhon0:AnimateFX:1.2.1'
+    implementation 'org.controlsfx:controlsfx:8.40.14'
+    implementation 'de.jensd:fontawesomefx:8.9'
+    implementation 'com.jfoenix:jfoenix:8.0.7'
+    implementation 'eu.hansolo:tilesfx:1.6.5'
+    implementation 'eu.hansolo:colors:1.4'
+    implementation fileTree(dir:'libs',includes:['*jar'])
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+}
+
+test {
+    useJUnitPlatform()
+}
